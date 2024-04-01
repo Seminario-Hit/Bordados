@@ -52,8 +52,20 @@
                             <!-- categoria -->
 
                             <!-- imagen -->
-
+                                <div class="form-group">
+                                    <label for="input-img" class="font-weight-bold">Imagen</label>
+                                    <input type="file" class="form-control bgcolor btn m-1 button-contact file-input" id="input-img" aria-describedby="img-help" placeholder="Imagen del producto.">
+                                    <div class="invalid-feedback">El archivo de imagen debe ser .jpg, .jpeg o .png.</div>
+                                    <div class="valid-feedback">El archivo se cargó correctamente.</div>
+                                </div>
                             <!-- imagen -->
+
+                            <!-- boton de enviar -->
+                                <div class="d-flex justify-content-around">
+                                    <button type="submit" class="btn m-1 button-contact">AÑADIR PRODUCTO</button>
+                                    <button type="reset" class="btn m-1 button-contact" id="reset">BORRAR CAMPOS</button>
+                                </div>
+                            <!-- boton de enviar -->
                         </form>
                     </div>
                 </div>
