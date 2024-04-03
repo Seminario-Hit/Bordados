@@ -4,7 +4,7 @@ navbarjs.innerHTML=`<div class="container-fluid">
 <nav class="row navbar navbar-expand-lg justify-content-between navbar-config">
 
     <div class="col-lg-3 col-md-6 col-8 p-0"> <!--Logo-->
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-label="Toggle navigation" aria-expanded="false">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" aria-label="Toggle navigation" aria-expanded="false">
             <span class="navbar-toggler-icon"></span>
         </button>
         <a href="../index.html" class="navbar-brand">
@@ -35,20 +35,21 @@ navbarjs.innerHTML=`<div class="container-fluid">
             </a>
         </button>  <!--Boton para agregar productos-->
 
-        <button class="btn-icon dropdown"> <!--Boton para Login-->
-            <a class="dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
-                <img class="img-icon" src="" alt="Imagen para Login">
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="./signup.html">Registrarse</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="./login.html">Iniciar sesion</a>
-            </div>
-        </button> <!--Boton para Login-->
+        <div class="dropdown">
+            <button class="btn btn-icon dropdown-toggle" type="button" id="navbarDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+              <img class="img-icon" src="user.png" alt="">
+            </button>
+            
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="#">Registrarse</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Iniciar sesión</a></li>
+            </ul>
+        </div> <!--Boton para Login-->
         
         <button class="btn-icon"> <!--Boton para Carrito-->
             <a href="./cart.html">
-                <img class="img-icon" src="" alt="imagen de carrito">
+                <img class="img-icon" src="Carro.png" alt="imagen de carrito">
             </a>
         </button> <!--Boton para Carrito-->
         

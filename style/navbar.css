@@ -1,23 +1,18 @@
-.hide-admin {
-    display: none;
-}
-
-.hide-user {
-    display: none;
-}
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@500;900&display=swap');
 
 .navbar-config {
     height: 65px;
-    background-color: darkgray;
+    background-color: black;
 }
 
 .img {
     width: 80px;
     height: 50px;
+    margin-left: 50px;
 }
 
 .active {
-    color: red !important;
+    color: #FEA100 !important;
 }
 
 .active:hover {
@@ -32,31 +27,31 @@
 }
 
 .nav-link:hover {
-    color: red;
+    color: white;
 }
 
-.drop-menu {
-background-color: black;
+.dropdown-menu {
+    background-color: black;
 }
 
-.drop-item {
+.dropdown-item {
     color: white;
     font-family: 'Outfit',sans-serif;
     font-weight: 500px;
 }
 
-.drop-item:hover, .drop-item:focus {
-    color: black;
+.dropdown-item:hover, .dropdown-item:focus {
+    color: blue;
     background-color: white;
 }
 
-.drop-item:hover {
+.dropdown-item:hover {
     color: red;
     background-color: black;
 }
 
 .dropdown-divider {
-    border-top: 1px solid gray;
+    border-top: 1px solid black;
 }
 
 .dropdown-toggle::after {
@@ -77,9 +72,11 @@ background-color: black;
 }
 
 .img-icon {
-    margin: 0;
-    width: 30px;
-    height: 30px;
+    width: 80px;
+    height: 50px;
+    margin-right: 50px;
+    margin-bottom: 50px;
+    
 }
 
 .dropdown-user {
@@ -165,4 +162,12 @@ background-color: black;
         width: 20px;
         height: 20px;
     }
+}
+
+.hide-admin {
+    display: none;
+}
+
+.hide-user {
+    display: none;
 }
