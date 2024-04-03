@@ -20,7 +20,7 @@ footer.innerHTML=`
 <!-- Redes sociales-->
 
 <!-- Datos de contacto -->
-  <div class="ol-12 col-sm-12 col-md-4 col-lg-4 d-flex flex-column justify-content-around aling-items-center">
+  <div class="col-12 col-md-4 col-lg-4 d-flex flex-column justify-content-center align-items-center">
     <p>Telefono: 55-5555-5555</p>
     <p>Email: bordados_esime@gmail.com</p>
   </div>
