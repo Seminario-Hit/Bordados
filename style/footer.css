@@ -1,0 +1,19 @@
+.red-social {
+    margin: 1rem;
+    max-width: 5vw;
+    min-width: 50px;
+}
+
+#footer {
+    background-color: black;
+    color: white;
+    padding: 2rem;
+    width: 100%;
+}
+
+.footer-position {
+    position: absolute;
+    bottom: 0px;
+}
+
+
