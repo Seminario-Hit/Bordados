@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="style/register.css">
+    <link href="style/footer.css" rel="stylesheet">
+</head>
+<body>
+    
+    <header id="header"></header>
+
+    <main id="bg">
+        <section class="conatiner pt-5 pb-5">
+            <div class="row">
+                <div class="col-lg-6 offset-lg-3 col-md-8 offset-md-2 col-sm-10 offset-sm-1 col-12 bg-contact">
+                    <img src="src/img/img-logo/LogoEsfera.png" alt="logo" class="rounded mx-auto d-block mb-3" id="logo">                   
+                    <h2 class="text-center font-weight-bold">CREAR CUENTA</h2>
+                    <div class="card-body">
+                        <form id="create-account" class="create-account">
+                            <!-- nombre -->
+                            <div class="form-group">
+                                <label for="name" class="font-weight-bold spacing">Nombre del usuario</label>
+                                <input type="text" class="form-control bgcolor" id="name" name="name" aria-describedby="name-help" placeholder="Nombre del usuario" >
+                                <div class="invalid-feedback">El nombre debe tener mas de dos letras y  sin caracteres especiales.</div>
+                            </div>
+                            <!-- nombre -->
+
+                            <!-- telefono -->
+                            <div class="form-group">
+                                <label for="phone" class="font-weight-bold spacing">Teléfono</label>
+                                <input type="text" class="form-control bgcolor" id="phone" name="phone" aria-describedby="name-help" placeholder="Numero de Teléfono">
+                                <div class="invalid-feedback">Solo se aceptan 10 numeros y sin caracteres especiales.</div>
+                            </div>
+                            <!-- telefono -->
+
+                            <!-- email -->
+                            <div class="form-group">
+                                <label for="email" class="font-weight-bold spacing">Email</label>
+                                <input type="email" class="form-control bgcolor" id="email" name="email" aria-describedby="name-help" placeholder="correo@dominio.com">
+                                <div class="invalid-feedback">El correo debe tener un dominio, sin usar caracteres especiales.</div>
+                            </div>
+                            <!-- email -->
+
+                            <!-- contraseña -->
+                            <div class="form-group">
+                                <label for="password" class="font-weight-bold spacing">Contraseña</label>
+                                <input type="password" class="form-control bgcolor" id="password" name="password" aria-describedby="name-help" placeholder="Captura tu contraseña">
+                                <div class="invalid-feedback">La contraseña debe tener mas de 7 caracteres, sin usar caracteres especiales.</div>
+                            </div>
+                            <!-- contraseña -->
+
+                            <!-- confirmar contraseña -->
+                            <div class="form-group">
+                                <label for="confirm" class="font-weight-bold spacing">Confirmar contraseña</label>
+                                <input type="password" class="form-control bgcolor" id="confirm" name="confirm" aria-describedby="name-help" placeholder="Confirma tu contraseña">
+                                <div class="invalid-feedback">La contraseña debe coincidir para confirmar.</div>
+                            </div>
+                            <!-- confirmar contraseña -->
+
+                            <!-- boton de enviar -->
+                                <div class="d-flex justify-content-around pt-5">
+                                    <button type="submit" class="btn m-1 button-contact">Registrarse</button>
+                                    <button type="reset" class="btn m-1 button-contact" id="reset">Borrar campos</button>
+                                </div>
+                            <!-- boton de enviar -->
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+    <footer id="footer" class="container-fluid footer">
+        
+    </footer>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src="js/footer.js"></script>
+<script type="module" src="js/register.js"></script>
+</html>
