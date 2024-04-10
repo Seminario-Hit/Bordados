@@ -1,0 +1,83 @@
+body{
+    min-height: 100vh;
+    position: relative;
+}
+
+#bg{
+    height: 100vh;
+    background-image: url('../Ajolote.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-bottom: 55rem;
+}
+
+.bgcolor{
+    border-radius: 32px;
+    background-color: rgba(255, 122, 0, 0.5);
+}
+
+.bgcolor:focus{
+    background-color: rgba(255, 122, 0, 0.5);
+}
+
+.bgcolor::placeholder{
+    color: white;
+}
+
+.bg-contact{
+    padding: 2rem;
+    background-color: rgba(255, 255, 255, 0.7) ;
+    border-radius: 30px;
+    backdrop-filter: blur(5px);
+}
+
+.container{
+    width: 50px;
+}
+
+#logo{
+    width: 50px;
+}
+
+.button-contact{
+    font-weight: bold;
+    background-color: #fea100;
+    border-radius: 32px;
+    padding-left: 30px;
+    padding-right: 30px;
+    color: white;
+}
+
+.button-contact::hover{
+    background-color: yellowgreen;
+    color: white;
+}
+
+.form-control{
+
+    border-color: black;
+    box-shadow: 0 0 10px 2px black;
+    /* el decolorado de las orillas*/
+}
+
+
+.form--mensaje-exito{
+    display: none;
+}
+
+.form--mensaje-exito-activo{
+    display: block;
+}
+
+.form--mensaje{
+    display: none;
+}
+
+.form--mensaje-activo{
+    display: block;
+}
+
+.Spacing {
+    padding-bottom: 21px;
+    padding-top: 14px;
+}
