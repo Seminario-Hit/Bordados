@@ -22,7 +22,7 @@ navbarjs.innerHTML=`<div class="container-fluid">
                     <a class ="nav-link" href="">Producto</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="">Contacto</a>
+                    <a class="nav-link" href="../pages/contact.html">Contacto</a>
                 </li>
             </ul>
         </div> 
