@@ -13,10 +13,15 @@ body{
 
 .bgcolor{
     border-radius: 32px;
+    background-color: rgba(255, 122, 0, 0.5);
+}
+
+.bgcolor:focus{
+    background-color: rgba(255, 122, 0, 0.5);
 }
 
 .bgcolor::placeholder{
-    color: black;
+    color: white;
 }
 
 .bg-contact{
@@ -49,7 +54,7 @@ body{
 }
 
 .form-control{
-    background: #fea100;
+
     border-color: black;
     box-shadow: 0 0 10px 2px black;
     /* el decolorado de las orillas*/
