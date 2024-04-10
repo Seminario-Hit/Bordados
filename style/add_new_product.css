@@ -20,6 +20,10 @@ body{
     color: white;
 }
 
+.bgcolor:focus{
+    background-color: rgba(255, 122, 0, 0.5);
+}
+
 .bg-contact{
     padding: 2rem;
     background-color: rgba(255, 255, 255, 0.7) ;
@@ -105,4 +109,9 @@ input[type="file"]{
 
 .form--mensaje-activo{
     display: block;
+}
+
+label{
+    padding-bottom: 10px;
+    padding-top: 5px;
 }
