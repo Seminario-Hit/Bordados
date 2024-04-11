@@ -84,7 +84,7 @@ formulario.addEventListener('submit', (e) => {
 
         addUser(usuarios, nombre.value, telefono.value, contra.value, correo.value);
 
-    var url ='http://localhost:8081/user';
+    var url ='http://localhost:8080/user';
 
         fetch( url,{
             method: 'POST',
@@ -100,10 +100,24 @@ formulario.addEventListener('submit', (e) => {
             }
             
         }).then(response => response.json())
-        
-        .then(data => {
-            console.log('Respuesta aceptada');
-        })
+
+            .then(respuesta => {
+                if(respuesta) 
+                {
+                    Swal.fire({
+                        icon:'success',
+                        title: 'Exito',
+                        text: 'Registro exitoso',
+                    })
+                ;}
+                else{
+                    Swal.fire({
+                        icon:'error',
+                        title: 'Registro Fallido',
+                        text: 'La direccion de email ya esta registrada',
+                    })
+                }
+            })
         .catch(error => {
             console.log('Datos incorrectos', error);
         });
