@@ -5,7 +5,7 @@ const formulario = document.getElementById('create-account');
 const nombre = document.getElementById('name'); 
 const correo = document.getElementById('email');  
 const telefono = document.getElementById('phone'); 
-const contra = document.getElementById('password'); 
+const contra = document.getElementById('password');
 
 const expresiones ={
     email: /^[\w._%+-]+@[\w.-]+\.[a-zA-Z]{2,4}$/,
