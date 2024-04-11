@@ -3,8 +3,12 @@ const formulario = document.getElementById('create-account');
 const nombre = document.getElementById('name'); 
 const correo = document.getElementById('email');  
 const telefono = document.getElementById('phone'); 
+<<<<<<< HEAD
+const contra = document.getElementById('password');
+=======
 const contra = document.getElementById('password'); 
 const resetform = document.getElementById('reset');
+>>>>>>> 79e4750baef6a10a5374c9fa4c7b9707ee74fe5e
 
 const expresiones ={
     email: /^[\w._%+-]+@[\w.-]+\.[a-zA-Z]{2,4}$/,
