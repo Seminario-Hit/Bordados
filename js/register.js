@@ -1,5 +1,3 @@
-import { user , addUser} from './user.js';
-
 const inputs=document.querySelectorAll('input');
 const formulario = document.getElementById('create-account');
 const nombre = document.getElementById('name'); 
@@ -76,14 +74,12 @@ else{
 }
 }
 
-let usuarios = [];
 
 formulario.addEventListener('submit', (e) => {
     e.preventDefault();
 
     if(campos.name && campos.phone && campos.password && campos.email){
 
-        addUser(usuarios, nombre.value, telefono.value, contra.value, correo.value);
 
     var url ='http://localhost:8080/user';
 
