@@ -1,14 +1,12 @@
+import { user , addUser} from './user.js';
+
 const inputs=document.querySelectorAll('input');
 const formulario = document.getElementById('create-account');
 const nombre = document.getElementById('name'); 
 const correo = document.getElementById('email');  
 const telefono = document.getElementById('phone'); 
-<<<<<<< HEAD
-const contra = document.getElementById('password');
-=======
 const contra = document.getElementById('password'); 
 const resetform = document.getElementById('reset');
->>>>>>> 79e4750baef6a10a5374c9fa4c7b9707ee74fe5e
 
 const expresiones ={
     email: /^[\w._%+-]+@[\w.-]+\.[a-zA-Z]{2,4}$/,
@@ -78,12 +76,14 @@ else{
 }
 }
 
+let usuarios = [];
 
 formulario.addEventListener('submit', (e) => {
     e.preventDefault();
 
     if(campos.name && campos.phone && campos.password && campos.email){
 
+        addUser(usuarios, nombre.value, telefono.value, contra.value, correo.value);
 
     var url ='http://localhost:8080/user';
 
