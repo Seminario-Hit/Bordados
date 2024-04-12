@@ -5,7 +5,7 @@ body{
 
 #bg{
     height: 100vh;
-    background-image: url('../Charizard.png');
+    background-image: url('../src/img/img-bg/Charizard.png');
     background-size: cover;
     background-repeat: no-repeat;
     padding-bottom: 55rem;
