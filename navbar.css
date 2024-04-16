@@ -1,0 +1,168 @@
+.hide-admin {
+    display: none;
+}
+
+.hide-user {
+    display: none;
+}
+
+.navbar-config {
+    height: 65px;
+    background-color: darkgray;
+}
+
+.img {
+    width: 80px;
+    height: 50px;
+}
+
+.active {
+    color: red !important;
+}
+
+.active:hover {
+    color: white !important;
+}
+
+.nav-link {
+    color: white;
+    font-size: 21px;
+    font-weight: 400px;
+    font-family: 'Outfit',sans-serif;
+}
+
+.nav-link:hover {
+    color: red;
+}
+
+.drop-menu {
+background-color: black;
+}
+
+.drop-item {
+    color: white;
+    font-family: 'Outfit',sans-serif;
+    font-weight: 500px;
+}
+
+.drop-item:hover, .drop-item:focus {
+    color: black;
+    background-color: white;
+}
+
+.drop-item:hover {
+    color: red;
+    background-color: black;
+}
+
+.dropdown-divider {
+    border-top: 1px solid gray;
+}
+
+.dropdown-toggle::after {
+    display: none;
+}
+
+.navbar-toggler-icon {
+    background-image: url();
+}
+
+.btn-icon {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    object-fit: cover;
+    width: 30px;
+    height: 30px;
+}
+
+.img-icon {
+    margin: 0;
+    width: 30px;
+    height: 30px;
+}
+
+.dropdown-user {
+    left: -50px;
+}
+
+@media screen and (max-width:1000px) {
+    .menu-hamburguer {
+        position: absolute;
+        top: 60px;
+        left: 40px;
+        background-color: black;
+        border-radius: 0.25rem;
+        z-index: 1000;
+    }
+    
+    .dropdown-divider {
+        display: none;
+    }
+
+    .dropdown-menu {
+        background-clip: none;
+        border: none;
+        border-radius: none;
+    }
+
+    .dropdown-user {
+        left: -50;
+    }
+
+}
+
+@media screen and (max-width:700px) {
+    .logo {
+        width: 100px;
+        height: 25px;
+    }
+    .btn-icon {
+        width: 25px;
+        height: 25px;
+    }
+    .img-icon {
+        width: 25px;
+        height: 25px;
+    }
+    .dropdown-user {
+        left: -90px;
+    }
+}
+
+@media screen and (max-width:650px) {
+    .logo {
+        width: 80px;
+        height: 20px;
+    }
+}
+
+@media screen and (max-width:375px) {
+    .logo {
+        width: 80px;
+        height: 20px;
+    }
+    .btn-icon {
+        width: 20px;
+        height: 20px;
+    }
+    .img-icon {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+@media screen and (max-width:320px) {
+    .logo {
+        width: 72px;
+        height: 18px;
+    }
+    .btn-icon {
+        width: 20px;
+        height: 20px;
+    }
+    .img-icon {
+        width: 20px;
+        height: 20px;
+    }
+}
