@@ -22,7 +22,7 @@ navbarjs.innerHTML=`<div class="container-fluid">
                     <a class ="nav-link" href="">Producto</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="">Contacto</a>
+                    <a class="nav-link" href="../pages/contact.html">Contacto</a>
                 </li>
             </ul>
         </div> 
@@ -37,19 +37,19 @@ navbarjs.innerHTML=`<div class="container-fluid">
 
         <div class="dropdown">
             <button class="btn btn-icon dropdown-toggle" type="button" id="navbarDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-              <img class="img-icon" src="user.png" alt="">
+              <img class="img-icon-login" src="../src/img/img-icons/login.svg" alt="">
             </button>
             
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="#">Registrarse</a></li>
+              <li><a class="dropdown-item" href="../pages/register.html">Registrarse</a></li>
               <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Iniciar sesión</a></li>
+              <li><a class="dropdown-item" href="../pages/login.html">Iniciar sesión</a></li>
             </ul>
         </div> <!--Boton para Login-->
         
         <button class="btn-icon"> <!--Boton para Carrito-->
             <a href="./cart.html">
-                <img class="img-icon" src="Carro.png" alt="imagen de carrito">
+                <img class="img-icon-cart" src="../src/img/img-icons/cart.svg" alt="imagen de carrito">
             </a>
         </button> <!--Boton para Carrito-->
         

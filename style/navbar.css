@@ -6,8 +6,8 @@
 }
 
 .img {
-    width: 80px;
-    height: 50px;
+    width: 58px;
+    height: 48px;
     margin-left: 50px;
 }
 
@@ -71,12 +71,34 @@
     height: 30px;
 }
 
+.btn:focus {
+    box-shadow: none !important;
+}
+
+.btn {
+    cursor: default;
+}
+
 .img-icon {
     width: 80px;
     height: 50px;
     margin-right: 50px;
     margin-bottom: 50px;
     
+}
+
+.img-icon-login{
+    width: 43px;
+    height: 61px;
+    margin: -14px;
+    margin-right: -114px;
+    cursor: pointer;
+}
+
+.img-icon-cart{
+    width: 101px;
+    height: 60px;
+    margin: -35px;
 }
 
 .dropdown-user {
