@@ -5,7 +5,7 @@ const resetform=document.getElementById('borrar');
 const expresiones ={
     email: /^[\w._%+-]+@[\w.-]+\.[a-zA-Z]{2,4}$/,
     message:/^.{1,500}$/,
-    phone: /^\d{10}$/,
+    phone: /^[a-zA-Z0-9]{10}$/,
     name: /^[A-Z][a-z]+(?: [A-Z][a-z]+)?$/
 }
 
