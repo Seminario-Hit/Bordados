@@ -6,6 +6,7 @@ const nombre = document.getElementById('name');
 const correo = document.getElementById('email');  
 const telefono = document.getElementById('phone'); 
 const contra = document.getElementById('password'); 
+const resetform = document.getElementById('reset');
 
 const expresiones ={
     email: /^[\w._%+-]+@[\w.-]+\.[a-zA-Z]{2,4}$/,
@@ -84,7 +85,7 @@ formulario.addEventListener('submit', (e) => {
 
         addUser(usuarios, nombre.value, telefono.value, contra.value, correo.value);
 
-    var url ='http://localhost:8081/user';
+    var url ='http://localhost:8080/user';
 
         fetch( url,{
             method: 'POST',
@@ -100,12 +101,34 @@ formulario.addEventListener('submit', (e) => {
             }
             
         }).then(response => response.json())
-        
-        .then(data => {
-            console.log('Respuesta aceptada');
-        })
+
+            .then(respuesta => {
+                if(respuesta) 
+                {
+                    Swal.fire({
+                        icon:'success',
+                        title: 'Exito',
+                        text: 'Registro exitoso',
+                    })
+                ;}
+                else{
+                    Swal.fire({
+                        icon:'error',
+                        title: 'Registro Fallido',
+                        text: 'La direccion de email ya esta registrada',
+                    })
+                }
+            })
         .catch(error => {
             console.log('Datos incorrectos', error);
         });
     }
-})
+});
+
+resetform.addEventListener('click', (e)  =>{
+    var inputs = document.getElementsByClassName('form-control');
+    for(var i = 0; i < inputs.length; i++) {
+        inputs[i].classList.remove('is-invalid');
+        inputs[i].classList.remove('is-valid');
+    }
+});
