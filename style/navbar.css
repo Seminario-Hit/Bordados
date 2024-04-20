@@ -6,9 +6,9 @@
 }
 
 .img {
-    width: 58px;
-    height: 48px;
-    margin-left: 50px;
+    max-width: 3vw;
+    min-width: 50px;
+    margin-left: 80px;
 }
 
 .active {
@@ -128,7 +128,6 @@
     .dropdown-user {
         left: -50;
     }
-
 }
 
 @media screen and (max-width:700px) {
@@ -147,12 +146,18 @@
     .dropdown-user {
         left: -90px;
     }
+    .hide-cart{
+        display: none;
+    }
 }
 
 @media screen and (max-width:650px) {
     .logo {
         width: 80px;
         height: 20px;
+    }
+    .hide-cart{
+        display: none;
     }
 }
 
@@ -169,6 +174,9 @@
         width: 20px;
         height: 20px;
     }
+    .hide-cart{
+        display: none;
+    }
 }
 
 @media screen and (max-width:320px) {
@@ -184,6 +192,9 @@
         width: 20px;
         height: 20px;
     }
+    .hide-cart{
+        display: none;
+    }
 }
 
 .hide-admin {
@@ -192,4 +203,10 @@
 
 .hide-user {
     display: none;
+}
+
+
+
+.navbar-toggler-icon{
+    background-image: url("data:image/svg+xml, %3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
