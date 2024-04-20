@@ -1,39 +1,42 @@
 const navbarjs = document.getElementById('navbar');
 
-navbarjs.innerHTML=`<div class="container-fluid">
-<nav class="row navbar navbar-expand-lg justify-content-between navbar-config">
-
-    <div class="col-lg-3 col-md-6 col-8 p-0"> <!--Logo-->
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" aria-label="Toggle navigation" aria-expanded="false">
+navbarjs.innerHTML=`<div class="container-fluid navbar-config">
+<nav class="navbar navbar-expand-lg">
+  <div class="container-fluid">
+    <div class="col-lg-3 col-md-6 col-8 p-0">
+        <!--Logo-->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <a href="../index.html" class="navbar-brand">
-            <img class="img" src="../src/img/img-logo/LogoEsfera.png" alt="logo">
+            <img class="img" src="../src/img/img-logo/LogoEsfera.png" alt="logo" >
         </a>
-    </div>        <!--Logo-->
+    </div> <!--Logo-->
 
-    <div class="col-lg-6 col-md-3 col-sm-3 col-5 menu-hamburguer"> <!--contenido-->
+    <div class="col-lg-6 col-md-3 col-sm-3 col-5 menu-hamburguer">
+        <!--contenido-->
         <div class="collapse navbar-collapse" id="navbarContent">
-            <ul class="navbar-nav mr-auto d-flex justify-content-around" style="width: 100%;">
-                <li class="nav-item active">
-                    <a class="nav-link active" href="">Inicio</a>
+            <ul class="navbar-nav d-flex justify-content-around" style="width: 100%;">
+                <li class="nav-item">
+                    <a class="nav-link active" href="../index.html">Inicio</a>
                 </li>
                 <li class="nav-item">
-                    <a class ="nav-link" href="../pages/hoodies.html">Producto</a>
+                    <a class="nav-link" href="../pages/hoodies.html">Productos</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="../pages/contact.html">Contacto</a>
                 </li>
             </ul>
-        </div> 
+        </div>
     </div> <!--contenido-->
 
     <div class="col-lg-3 col-md-3 col-4 p-0 d-flex justify-content-around align-items-center">
-        <button class="btn-icon hide-admin"> <!--Boton para agregar productos-->
+        <button class="btn-icon hide-admin">
+            <!--Boton para agregar productos-->
             <a href="../pages/add-new-prodct.html">
                 <img class="img-icon" src="" alt="Imagen para agregar productos">
             </a>
-        </button>  <!--Boton para agregar productos-->
+        </button> <!--Boton para agregar productos-->
 
         <div class="dropdown">
             <button class="btn btn-icon dropdown-toggle" type="button" id="navbarDropdown" data-bs-toggle="dropdown" aria-expanded="false">
@@ -47,17 +50,20 @@ navbarjs.innerHTML=`<div class="container-fluid">
             </ul>
         </div> <!--Boton para Login-->
         
-        <button class="btn-icon"> <!--Boton para Carrito-->
+        <button class="btn-icon">
+            <!--Boton para Carrito-->
             <a href="./cart.html">
-                <img class="img-icon-cart" src="../src/img/img-icons/cart.svg" alt="imagen de carrito">
+                <img class="img-icon-cart hide-cart" src="../src/img/img-icons/cart.svg" alt="imagen de carrito">
             </a>
         </button> <!--Boton para Carrito-->
         
-        <button class="btn-icon hide-user" id="btn-logOut"> <!--Boton para Cerrar sesion-->
+        <button class="btn-icon hide-user" id="btn-logOut">
+            <!--Boton para Cerrar sesion-->
             <a href="#">
                 <img class="img-icon" src="" alt="Imagen de deslogeo">
             </a>
         </button> <!--Boton para Cerrar sesion-->
     </div>
+  </div>
 </nav>
 </div>`;
