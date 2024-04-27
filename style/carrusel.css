@@ -86,33 +86,37 @@ h2 {
 
 .position{
   position: absolute;
-  top: 50%;
-  left: 94%;
+  top: 26%;
+  left: 79%;
   transform: translate(-50%, -50%);
+  font-size: 20px;
 }
 
 .position-1{
   position: absolute;
-  top: 40%;
-  left: 90%;
+  top: 36%;
+  left: 70%;
   transform: translate(-50%, -50%);
   font-weight: 700;
+  font-size: 20px;
 }
 
 .texto-slide1{
   position: absolute;
   top: 10px;
   left: 10px;
-  font-size: 61px;
-  font-weight: 400;
+  font-size: 30px;
+  font-weight: 400px;
   font-family: 'Outfit', sans-serif;
   color: rgb(255, 255, 255);
 }
 .position-slide1{
 position: absolute;
-top: 70%;
-left: 30%;
+top: 39%;
+left: 77%;
 transform: translate(-50%, -50%);
+font-weight: bold;
+
 }
 
 .texto-img2{
@@ -141,6 +145,10 @@ text-align: center;
   text-align: center;
   }
 
+  .position, .position-1, .position-slide1, 
+  .position2, .position2-1 {
+    color: rgb(80, 21, 80);
+  }
 .logo-img{
   position: absolute;
   top: 10px;
@@ -148,9 +156,11 @@ text-align: center;
 }
 .position-logo{
   position: absolute;
-  top: 40%;
-  left: 30%;
+  top: 15%;
+  left: 91%;
   transform: translate(-50%, -50%);
+  width: 170px;
+  height: 170px;
 }
 
 
@@ -207,6 +217,5 @@ text-align: center;
   .center{
     width: 100%;
     height: 200px;
-  }
-  
+  } 
 }
