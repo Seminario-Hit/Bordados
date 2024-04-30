@@ -33,7 +33,7 @@ navbarjs.innerHTML=`<div class="container-fluid navbar-config">
     <div class="col-lg-3 col-md-3 col-4 p-0 d-flex justify-content-around align-items-center">
         <button class="btn-icon hide-admin">
             <!--Boton para agregar productos-->
-            <a href="../pages/add-new-prodct.html">
+            <a href="../pages/add_new_product.html">
                 <img class="img-icon" src="" alt="Imagen para agregar productos">
             </a>
         </button> <!--Boton para agregar productos-->
@@ -67,3 +67,34 @@ navbarjs.innerHTML=`<div class="container-fluid navbar-config">
   </div>
 </nav>
 </div>`;
+
+
+let userLogged = window.sessionStorage.getItem("userLogged");
+let tokenJSON = JSON.parse(window.sessionStorage.getItem("token"));
+if (tokenJSON != null && userLogged != null) {
+    let token = tokenJSON.accessToken;
+    fetch("http://localhost:8080/admin/",
+        {
+            method: 'POST',
+            body: userLogged,
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': 'ESIME ' + token
+            }
+        })
+        .then(res => res.json())
+        .then(isAdmin => {
+            document.getElementsByClassName("hide-user")[0].classList.remove("hide-user");
+            if (isAdmin) {
+                document.getElementsByClassName("hide-admin")[0].classList.remove("hide-admin");
+            }
+        })
+        .catch(error => console.error('Error:', error));
+}
+
+let btnLogout = document.getElementById("btn-logOut");
+btnLogout.addEventListener("click",(e)=>{
+    sessionStorage.removeItem("userLogged");
+    sessionStorage.removeItem("token");
+    location.reload();
+})
