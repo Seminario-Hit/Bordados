@@ -1,15 +1,12 @@
-import config from './config.js';
-
-const url = config.apiUrl + "/products/category/3";
-
 const products = document.getElementById('product');
+const url= "http://localhost:8080/products/category/2";
 
 fetch(url)
     .then(response => {
         if(response.ok)
         {
             return response.json();
-        } 
+        }
         throw new Error('Error de la solicitud');
     })
     .then(response => {
@@ -38,7 +35,8 @@ fetch(url)
                 </div>
             </div>`;
         });
-            products.innerHTML = tarjeta;
+        products.innerHTML = tarjeta;
+            
     })
     .catch(error => {
         // Capturamos cualquier error ocurrido durante la solicitud

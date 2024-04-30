@@ -1,0 +1,10 @@
+.remove-decoration {
+    text-decoration: none !important; /* !important se usa para anular cualquier estilo anterior */
+    color: black;
+  }
+
+.texto-en-negrita {
+    font-family: 'Anton';
+    font-size: 72px;
+    font-weight: 700; /* Negrita */
+}
