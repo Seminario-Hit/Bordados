@@ -1,5 +1,8 @@
+import config from './config.js';
+
+const url = config.apiUrl + "/products/category/3";
+
 const products = document.getElementById('product');
-const url= "http://localhost:8080/products/category/3";
 
 fetch(url)
     .then(response => {
