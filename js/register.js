@@ -109,8 +109,9 @@ formulario.addEventListener('submit', (e) => {
                         icon:'success',
                         title: 'Exito',
                         text: 'Registro exitoso',
-                    })
-                ;}
+                    });
+                    setTimeout(()=>{window.location.href = "../pages/login.html"},2000);
+            }
                 else{
                     Swal.fire({
                         icon:'error',
