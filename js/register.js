@@ -109,14 +109,18 @@ formulario.addEventListener('submit', (e) => {
                         icon:'success',
                         title: 'Exito',
                         text: 'Registro exitoso',
-                    })
-                ;}
+                    });
+                    formulario.reset();
+                    setTimeout(()=>{window.location.href = "../index.html"},2000);
+                }
                 else{
                     Swal.fire({
                         icon:'error',
                         title: 'Registro Fallido',
                         text: 'La direccion de email ya esta registrada',
                     })
+                    formulario.reset();
+                    setTimeout(()=>{window.location.href = "../pages/login.html"},2000);
                 }
             })
         .catch(error => {
