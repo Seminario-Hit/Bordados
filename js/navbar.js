@@ -34,7 +34,7 @@ navbarjs.innerHTML=`<div class="container-fluid navbar-config">
         <button class="btn-icon hide-admin">
             <!--Boton para agregar productos-->
             <a href="../pages/add_new_product.html">
-                <img class="img-icon" src="" alt="Imagen para agregar productos">
+                <img class="img-icon" src="../src/img/img-icons/Nuevo_producto.jpg" alt="Imagen para agregar productos">
             </a>
         </button> <!--Boton para agregar productos-->
 
@@ -60,7 +60,7 @@ navbarjs.innerHTML=`<div class="container-fluid navbar-config">
         <button class="btn-icon hide-user" id="btn-logOut">
             <!--Boton para Cerrar sesion-->
             <a href="#">
-                <img class="img-icon" src="" alt="Imagen de deslogeo">
+                <img class="img-icon" src="../src/img/img-icons/LogOut.jpg" alt="Imagen de deslogeo">
             </a>
         </button> <!--Boton para Cerrar sesion-->
     </div>
