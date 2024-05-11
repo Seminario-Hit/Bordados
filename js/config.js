@@ -1,6 +1,6 @@
 // config.js
 const config = {
-    apiUrl: "http://192.168.5.143:8080"
+    apiUrl: "http://localhost:8080"
   };
   
   export default config;
