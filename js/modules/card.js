@@ -26,42 +26,52 @@ export function addItem(array, name, price, description, img, category){
 //Crea una tarjeta dinamica solo de presentacion, con la imagen de muestra
 export function card(product){
 
-    let card =  `    
-    <div class="col-lg-3 col-md-4 col-sm-6 col-12 d-flex justify-content-center">
-        <div class="card card-style">
-            <a href="./detail.html?id=${product.idProduct}" >
-                <img src="${product.productPicture}" class="card-img-top img-product" alt="producto">
+    let card =  `<div class="col-6 mt-4 mb-4 d-flex justify-content-center">
+        <div class="card " style="width: 18rem;">
+            <img src="${product.productPicture}" class="card-img-top" alt="...">
+            <a href="./cart.html?id=${product.idProduct}" class="position-relative">
+                <img src="../src/img/img-card/Carrito.png" class="position-absolute top-0 start-100 translate-middle img-cart" alt="...">
             </a>
-            <div class="card-body p-1">
-                <div class="shop text-center">
-                    <a href="./detail.html?id=${product.idProduct}"><img src="../assets/icons/carrito_barmenu_100x100.png" class="img-cart" alt="cart"></a>
+
+            <div class="card-body">
+                <div class="row">
+                    <div class="col">
+                        <a href="./detail.html?id=${product.idProduct}">
+                        <h5 class="card-title">${product.nameProduct}</h5>
+                        </a>
+                        <h6 class="card-title">${product.descriptionProduct}</h6>
+                    </div>
+                    <div class="col">
+                        <h4 class="card-text">Precio:${product.priceProduct}</h4>
+                    </div>
                 </div>
-                <p class="card-text text-center product-price">$${product.priceProduct.toLocaleString()}</p>
             </div>
         </div>
-    </div>
-    `;
+    </div>`;
 
     return card;
 }
 
 export function cardIndex(product){
 
-    let card =  `    
-    <div class="col-lg-3 col-md-4 col-sm-6 col-12 d-flex justify-content-center">
-        <div class="card card-style">
-            <a href="./pages/detail.html?id=${product.idProduct}" >
-                <img src="${product.productPicture}" class="card-img-top img-product" alt="producto">
-            </a>
-            <div class="card-body p-1">
-                <div class="shop text-center">
-                    <a href="./detail.html?id=${product.idProduct}"><img src="./assets/icons/carrito_barmenu_100x100.png" class="img-cart" alt="cart"></a>
+    let card =  `<div class="col-4 mt-4 mb-4 d-flex justify-content-center">
+    <div class="card " style="width: 18rem;">
+        <img src="${product.productPicture}" class="card-img-top" alt="...">
+        <img src="../src/img/img-card/Carrito.png" class="position-absolute top-0 start-100 translate-middle img-cart"
+            alt="...">
+        <div class="card-body">
+            <div class="row">
+                <div class="col">
+                    <h5 class="card-title">${product.nameProduct}</h5>
+                    <h6 class="card-title">${product.descriptionProduct}</h6>
                 </div>
-                <p class="card-text text-center product-price">$${product.priceProduct.toLocaleString()}</p>
+                <div class="col">
+                    <h4 class="card-text">Precio:${product.priceProduct}</h4>
+                </div>
             </div>
         </div>
     </div>
-    `;
+</div>`;
 
     return card;
 }
