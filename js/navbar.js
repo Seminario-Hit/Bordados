@@ -52,7 +52,7 @@ navbarjs.innerHTML=`<div class="container-fluid navbar-config">
         
         <button class="btn-icon">
             <!--Boton para Carrito-->
-            <a href="./cart.html">
+            <a href="../pages/cart.html">
                 <img class="img-icon-cart hide-cart" src="../src/img/img-icons/cart.svg" alt="imagen de carrito">
             </a>
         </button> <!--Boton para Carrito-->
