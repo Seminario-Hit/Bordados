@@ -1,0 +1,89 @@
+body {
+    min-height: 100vh;
+    position: relative;
+}
+
+main{
+    padding-bottom: 22rem;
+}
+
+@media screen and (max-width:768px){
+    main{
+        padding-bottom: 26rem;
+    }
+}
+
+.img-skate{
+    height: 40vh;
+    transition: 0.4s;
+}
+
+.img-skate:hover{
+    transform: scale(1.05);
+}
+
+.bg-detail {
+    height: 25vh; /* Ajusta la altura según sea necesario */
+    width: 100%; /* Cambiado de 100vw a 100% */
+    margin-bottom: 9rem;
+    position: relative; /* Cambiado de absolute a relative */
+    background-image: url("../src/img/img-bg/fondo_productos_2560x325.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center bottom; /* Ajusta la posición de la imagen de fondo */
+}
+
+
+@media screen and (max-width:768px){
+    .bg-detail{
+        margin-bottom: 14rem;
+    }
+}
+
+.skate-name{
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.skate-desc{
+    font-size: 1rem;
+    margin: 1rem;
+}
+
+.skate-price{
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.pstn-btn-cart{
+    position: absolute;
+    right: 0;
+    top: 2%;
+    height: 40px;
+    width: 40px;
+}
+
+@media screen and (max-width:578px){
+    .pstn-btn-cart{
+        right:5%;
+    }
+}
+
+.btn-cart{
+    margin-top: 5px;
+    height: 30px;
+    width: 30px;
+    transition: 0.4s;
+}
+
+.btn-cart:hover{
+    transform: scale(1.1);
+}
+
+.shop{
+    border-radius: 50%;
+}
+
+main{
+    position: relative;
+}
