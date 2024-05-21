@@ -40,46 +40,44 @@ function calcAll() {
 
 };//calcAll
 
-//Add a listener to the table body to catch all the clicks on the delete buttons
+// Add a listener to the table body to catch all the clicks on the delete buttons
 function removeButton() {
-    let body = document.getElementById("table-body");//Get the body element
+    let body = document.getElementById("table-body"); // Get the body element
 
     body.addEventListener("click", function (e) {
+        if (e.target && e.target.nodeName === "BUTTON") { // Verify that the click is from a button
+            let tableRow = e.target.closest('.row.first-row.product-cart'); // Find the closest parent row with the class 'first-row product-cart'
+            
+            if (tableRow) {
+                tableRow.remove(); // Remove the row
 
-        if (e.target && e.target.nodeName == "BUTTON") { //Verify that the click is from a button
-            tableBody = e.target.parentNode.parentNode.parentNode.parentNode.parentNode;
-            tableRow = e.target.parentNode.parentNode.parentNode.parentNode;
-            tableBody.removeChild(tableRow); //Remove the row
-            productId = tableRow.getElementsByClassName("hide")[0].textContent;
+                let productId = tableRow.querySelector(".hide").textContent;
 
-            let productosStorage = localStorage.getItem("productosCarrito");
-            if (productosStorage != null) {
-                let productosCarrito = JSON.parse(productosStorage);
-                productosCarrito = productosCarrito.filter(producto => {
-                    return producto.idProduct != productId;
-                });
-                let jsonProductos = JSON.stringify(productosCarrito);
-                localStorage.setItem("productosCarrito", jsonProductos);
+                let productosStorage = localStorage.getItem("productosCarrito");
+                if (productosStorage != null) {
+                    let productosCarrito = JSON.parse(productosStorage);
+                    productosCarrito = productosCarrito.filter(producto => {
+                        return producto.idProduct != productId;
+                    });
+                    let jsonProductos = JSON.stringify(productosCarrito);
+                    localStorage.setItem("productosCarrito", jsonProductos);
+                } else {
+                    localStorage.setItem("productosCarrito", []); // Prevent a bug when deleting LocalStorage and then using the delete button
+                }
+
                 calcAll();
-            } else {
-                localStorage.setItem("productosCarrito", []); //Previene un bug al borrar el LocalStorage y después usar el boton de borrar artículo
-                calcAll();
-                localStorage.removeItem("productosCarrito");
             }
+        }
+    }); // addEventListener
+} // removeButton
 
-        };
-
-    });//addEventListener
-
-};//removeButton
 
 //Creates a new row with the product name and price given by the client
 function createProduct(productosCarrito) {
 
     productosCarrito.forEach(product => {
         //Creates the string for the new product in HTML
-        newProductString = `
-        <div class="row first-row product-cart">
+        newProductString = ` <div class="row first-row product-cart">
         <div class="col-12 col-md-3 d-flex justify-content-center">
             <img src="${product.productPicture}" alt="producto" class="img-cart">
         </div>
@@ -105,12 +103,10 @@ function createProduct(productosCarrito) {
                 </div>
             </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="col">
+        <div class="col-12">
             <img src="../src/img/img-bg/fondo_productos_2560x325.png" alt="fondo" class="bg-cart">
         </div>
-    </div> `
+    </div>`
         //Add the new element to the HTML
         let body = document.getElementById("table-body");
         body.innerHTML += newProductString;
