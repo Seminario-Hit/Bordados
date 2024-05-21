@@ -17,7 +17,7 @@ body {
     font-weight: bold;
   }
   
-  .img-cart{
+  .img-cart{ 
     height: 5rem;
   }
   
@@ -28,7 +28,7 @@ body {
   }
   
   .input-qty{
-    width: 3rem;
+    width: 4rem;
   }
   
   .first-row{
