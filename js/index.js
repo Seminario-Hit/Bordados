@@ -49,7 +49,7 @@ fetch(`http://localhost:8080/products/${idRecommendedProducts[0]}`)
         .catch(error => console.error('Error:', error));
 }
 
-let btnLogout = document.getElementById("btn-logout");
+let btnLogout = document.getElementById("btn-logOut");
 btnLogout.addEventListener("click",(e)=>{
     sessionStorage.removeItem("userLogged");
     sessionStorage.removeItem("token");
