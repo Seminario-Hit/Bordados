@@ -30,7 +30,7 @@ function validateForm(){
     if(valid === -1){
         let productJSON = new Item(productName.value,price.value,description.value,filePath,categoryInput.value);
         let token = JSON.parse(window.sessionStorage.getItem("token")).accessToken;
-        fetch("http://localhost:8080/products",
+        fetch("http://localhost:8080/products/",
         {
             method: 'POST',
             body: JSON.stringify(productJSON),
