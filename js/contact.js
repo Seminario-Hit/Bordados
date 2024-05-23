@@ -1,5 +1,6 @@
 const inputs=document.querySelectorAll('input');
 const resetform=document.getElementById('borrar');
+const send=document.getElementById('enviar');
 
 
 const expresiones ={
@@ -61,4 +62,8 @@ resetform.addEventListener('click', (e)  =>{
         inputs[i].classList.remove('is-invalid');
         inputs[i].classList.remove('is-valid');
     }
+})
+
+send.addEventListener('click', (e) => {
+    e.preventDefault();
 })

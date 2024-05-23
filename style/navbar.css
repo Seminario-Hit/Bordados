@@ -99,6 +99,22 @@
     width: 101px;
     height: 60px;
     margin: -35px;
+    margin-top: -45px;
+}
+
+.img-icon-addnew{
+    width: 44px;
+    position: absolute;
+    top: 44%;
+    left: 78%;
+    transform: translate(-50%, -50%);
+}
+
+.img-icon-logout{
+    width: 44px;
+    position: absolute;
+    top: 44%;
+    transform: translate(-50%, -50%);
 }
 
 .dropdown-user {

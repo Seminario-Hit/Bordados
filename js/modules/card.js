@@ -57,8 +57,9 @@ export function cardIndex(product){
     let card =  `<div class="col-4 mt-4 mb-4 d-flex justify-content-center">
     <div class="card " style="width: 18rem;">
         <img src="${product.productPicture}" class="card-img-top" alt="...">
-        <img src="../src/img/img-card/Carrito.png" class="position-absolute top-0 start-100 translate-middle img-cart"
-            alt="...">
+        <a href="./pages/cart.html?id=${product.idProduct}" class="position-relative">
+                <img src="../src/img/img-card/Carrito.png" class="position-absolute top-0 start-100 translate-middle img-cart" alt="...">
+            </a>
         <div class="card-body">
             <div class="row">
                 <div class="col">

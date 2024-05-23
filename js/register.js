@@ -1,5 +1,3 @@
-import { user , addUser} from './user.js';
-
 const inputs=document.querySelectorAll('input');
 const formulario = document.getElementById('create-account');
 const nombre = document.getElementById('name'); 
@@ -83,8 +81,6 @@ formulario.addEventListener('submit', (e) => {
 
     if(campos.name && campos.phone && campos.password && campos.email){
 
-        addUser(usuarios, nombre.value, telefono.value, contra.value, correo.value);
-
     var url ='http://localhost:8080/user';
 
         fetch( url,{
@@ -110,8 +106,8 @@ formulario.addEventListener('submit', (e) => {
                         title: 'Exito',
                         text: 'Registro exitoso',
                     });
-                    formulario.reset();
-                    setTimeout(()=>{window.location.href = "../index.html"},2000);
+                    resetearCampos();
+                    setTimeout(()=>{window.location.href = "../pages/login.html"},2000);
                 }
                 else{
                     Swal.fire({
@@ -119,7 +115,7 @@ formulario.addEventListener('submit', (e) => {
                         title: 'Registro Fallido',
                         text: 'La direccion de email ya esta registrada',
                     })
-                    formulario.reset();
+                    resetearCampos();
                     setTimeout(()=>{window.location.href = "../pages/login.html"},2000);
                 }
             })
@@ -129,10 +125,21 @@ formulario.addEventListener('submit', (e) => {
     }
 });
 
-resetform.addEventListener('click', (e)  =>{
-    var inputs = document.getElementsByClassName('form-control');
-    for(var i = 0; i < inputs.length; i++) {
-        inputs[i].classList.remove('is-invalid');
-        inputs[i].classList.remove('is-valid');
+function resetearCampos() {
+    // Obtener todos los campos de entrada del formulario
+    var inputs = document.querySelectorAll('#create-account .form-control');
+    inputs.forEach(input => {
+        // Restablecer el valor del campo de entrada
+        input.value = '';
+        // Eliminar las clases de validación
+        input.classList.remove('is-invalid');
+        input.classList.remove('is-valid');
+    });
+    
+    // Restablecer todos los campos a false en el objeto campos
+    for (const campo in campos) {
+        campos[campo] = false;
     }
-});
+}
+
+resetform.addEventListener('click', resetearCampos);

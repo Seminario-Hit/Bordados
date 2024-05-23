@@ -80,7 +80,7 @@ formulario.addEventListener('submit', (e) => {
                 else{
                     Swal.fire({
                         icon:'error',
-                        title: 'Registro Fallido',
+                        title: 'Inicio de sesión Fallido',
                         text: 'Usuario y/o contraseña no validos',
                     })
                     formulario.reset();
