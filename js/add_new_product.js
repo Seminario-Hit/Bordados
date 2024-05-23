@@ -21,59 +21,6 @@ const formIsValid = {
     img: false
 }
 
-//Función para evaluar si el formulario está validado y crear un nuevo objeto
-function validateForm(){
-    const formValues = Object.values(formIsValid); //regresa un arreglo con todos los valores de un objeto.
-    
-    //Vamos a buscar dentro del arreglo formValuer 
-    const valid = formValues.findIndex((value) => value == false);
-    if(valid === -1){
-        let productJSON = new Item(productName.value,price.value,description.value,filePath,categoryInput.value);
-        let token = JSON.parse(window.sessionStorage.getItem("token")).accessToken;
-        fetch("http://localhost:8080/products/",
-        {
-            method: 'POST',
-            body: JSON.stringify(productJSON),
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': 'ESIME ' + token
-            }
-        })
-        .then(res => res.json())
-        .then(productValid => {
-            if (productValid) {
-                Swal.fire({
-                    icon: 'success',
-                    title: 'Éxito',
-                    text: 'Producto Registrado',
-                  });
-            }else{
-                Swal.fire({
-                    icon: 'success',
-                    title: 'Registro Fallido',
-                    text: 'El nombre de producto ya existe',
-                  });
-            }
-        })
-        .catch(error => console.error('Error:', error));
-
-
-        resetForm();
-
-		document.querySelectorAll('.is-valid').forEach((icono) => {
-			icono.classList.remove('is-valid');
-		});
-
-		Object.keys(formIsValid).forEach(campo => {
-			formIsValid[campo] = false;
-		})
-    }else{
-        Swal.fire({
-            icon: 'error',
-            text: 'Favor de completar correctamente el formulario',
-          })
-    }
-}
 
 //Cambia clase a valido
 function isValidStyle(element){
@@ -139,34 +86,6 @@ price.addEventListener('change', (e) => {
     }
 });
 
-//Validación para el botón de agregar imágen
-fileInput.addEventListener('change', (e) => {
-    filePath = fileInput.value;
-    const allowedExtensions = /(\.jpg|\.jpeg|\.png)$/i;
-    if (!allowedExtensions.exec(filePath)) {
-        isInvalidStyle(e.target);
-        fileInput.value = '';
-        filePath = fileInput.value;
-        formIsValid.img = false;
-    }else{
-        isValidStyle(e.target);
-        formIsValid.img = true;
-        let categoryFolder = "";
-        //Elige la subcarpeta dependiendo de la categoría
-        switch(categoryInput.value){
-            case "1":
-                categoryFolder = "hoodies/";
-                break;
-            case "2":
-                categoryFolder = "tshirts/";
-                break;
-            case "3":
-                categoryFolder = "caps/";
-                break;
-        }
-
-        filePath = "/img-products/" + categoryFolder + e.target.value.split("\\").pop();    }
-});
 
 //Cambia el filePath si la imagen cargada es correcta y se modifica la categoría
 categoryInput.addEventListener('change', (e) => {
@@ -192,7 +111,7 @@ categoryInput.addEventListener('change', (e) => {
 //Detiene el evento submit y evalua si el formulario es válido
 form.addEventListener('submit', (e) => {
     e.preventDefault();
-    validateForm(); 
+    validateForm();
 })
 
 //Reseta las clases con el botón reset
@@ -209,6 +128,127 @@ reset.addEventListener('click', (e) => {
 }
 )
 
+async function validateForm(){
+    const formValues = Object.values(formIsValid); // Regresa un arreglo con todos los valores de un objeto.
+    
+    // Buscamos dentro del arreglo formValues 
+    const valid = formValues.findIndex((value) => value == false);
+    if(valid === -1){
+        // Verificamos si la imagen es válida antes de enviar el formulario
+        if (formIsValid.img) {
+            const file = fileInput.files[0]; // Obtenemos el archivo seleccionado
+
+            // Verificamos si se seleccionó un archivo
+            if (file) {
+                const formData = new FormData(); // Creamos un objeto FormData
+                formData.append('file', file); // Adjuntamos el archivo al objeto FormData
+
+                console.log('Nombre del archivo:', file.name);
+
+                try {
+                    // Enviamos la solicitud para cargar la imagen al servidor
+                    const response = await fetch('http://localhost:8080/upload', {
+                        method: 'POST',
+                        body: formData
+                    });
+
+                    // Verificamos si la carga de la imagen fue exitosa
+                    if (response.ok) {
+                        // Mostramos un mensaje de éxito
+                        fileInput.classList.add('is-valid');
+                        fileInput.classList.remove('is-invalid');
+                    } else {
+                        // Mostramos un mensaje de error si la carga falla
+                        fileInput.classList.add('is-invalid');
+                        fileInput.classList.remove('is-valid');
+                        throw new Error('Image upload failed!');
+                    }
+                } catch (error) {
+                    // Mostramos un mensaje de error si ocurre un error durante la carga
+                    console.error('Error:', error);
+                    alert('An error occurred while uploading the image.');
+                    return; // Abortamos el envío del formulario si la carga de la imagen falla
+                }
+            }
+        }
+
+        let productJSON = new Item(productName.value,price.value,description.value,filePath,categoryInput.value);
+        let token = JSON.parse(window.sessionStorage.getItem("token")).accessToken;
+        fetch("http://localhost:8080/products/",
+        {
+            method: 'POST',
+            body: JSON.stringify(productJSON),
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': 'ESIME ' + token
+            }
+        })
+        .then(res => res.json())
+        .then(productValid => {
+            if (productValid) {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Éxito',
+                    text: 'Producto Registrado',
+                  });
+            }else{
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Registro Fallido',
+                    text: 'El nombre de producto ya existe',
+                  });
+            }
+        })
+        .catch(error => console.error('Error:', error));
+
+
+        resetForm();
+
+		document.querySelectorAll('.is-valid').forEach((icono) => {
+			icono.classList.remove('is-valid');
+		});
+
+		Object.keys(formIsValid).forEach(campo => {
+			formIsValid[campo] = false;
+		})
+    }else{
+        Swal.fire({
+            icon: 'error',
+            text: 'Favor de completar correctamente el formulario',
+          })
+    }
+}
+
+
+function handleImageValidation(event) {
+    filePath = fileInput.value;
+    const allowedExtensions = /(\.jpg|\.jpeg|\.png)$/i;
+    if (!allowedExtensions.exec(filePath)) {
+        isInvalidStyle(event.target);
+        fileInput.value = '';
+        filePath = fileInput.value;
+        formIsValid.img = false;
+    } else {
+        isValidStyle(event.target);
+        formIsValid.img = true;
+        let categoryFolder = "";
+        // Elige la subcarpeta dependiendo de la categoría
+        switch (categoryInput.value) {
+            case "1":
+                categoryFolder = "hoodies/";
+                break;
+            case "2":
+                categoryFolder = "tshirts/";
+                break;
+            case "3":
+                categoryFolder = "caps/";
+                break;
+        }
+
+        filePath = "../src/img/img-products/img-products/" + event.target.value.split("\\").pop();
+    }
+}
+fileInput.addEventListener('change', handleImageValidation);
 
 //Pide a la API las categorías para formar el menú desplegable
 fetch("http://localhost:8080/category")
